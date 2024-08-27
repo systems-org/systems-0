@@ -6,3 +6,6 @@ def true_test():
 def false_test():
     assert add_numbers(1,1) == 11
 
+print(true_test())
+print(false_test())
+
