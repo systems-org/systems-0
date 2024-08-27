@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Coverage Badge
+        uses: we-cli/coverage-badge-action@v1.0.1
+            
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov
