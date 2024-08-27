@@ -22,10 +22,10 @@ on:
         pip install -r requirements.txt
    
   test:
-    
-    runs-on: ubuntu-latest
-    steps:
+      build:
+      runs-on: ubuntu-latest
+      steps:
       - name: Test with pytest
-      run: |
+        run: |
         pip install pytest pytest-cov
         pytest test_file.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
