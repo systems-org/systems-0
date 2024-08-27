@@ -1,4 +1,4 @@
-name: Test-Cases
+name: systems.org app0
 
 on:
   push:
@@ -20,8 +20,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      
 
       - name: Test with pytest
         run: |
