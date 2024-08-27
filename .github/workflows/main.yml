@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: Ubuntu 24.04 LTS
+    runs-on: Ubuntu 24.04 
     steps:
       - name: Check out code
         uses: actions/checkout@v4
