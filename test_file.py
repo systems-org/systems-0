@@ -1,4 +1,4 @@
-from myfile.py import add_numbers
+from myfile import add_numbers
 
 def true_test():
     assert add_numbers(1,2) == 3
