@@ -1,4 +1,4 @@
-name: systems.org app0
+name: Test-Cases
 
 on:
   push:
