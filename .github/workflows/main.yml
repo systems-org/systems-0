@@ -1,28 +1,32 @@
-name: Run tests and upload coverage
+name: systems.org app0
 
-on: 
-  push
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: write
 
 jobs:
-  test:
-    name: Run tests and collect coverage
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
-
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+            
       - name: Install dependencies
         run: pip install pytest pytest-cov
-
-      - name: Run tests
+      
+      - name: Test with pytest
         run: pytest --cov
-
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: 118dc41a-50b7-40cf-b989-623dcdbe28d5
