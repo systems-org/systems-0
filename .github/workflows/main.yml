@@ -28,25 +28,25 @@ jobs:
         run: |
           pytest --cov --junitxml=junit.xml
       # Copy and paste the codecov/test-results-action here
-      # - name: Upload coverage to Codecov
-      #   uses: codecov/codecov-action@v4
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      # - name: Upload test results to Codecov
-      #   if: ${{ !cancelled() }}
-      #   uses: codecov/test-results-action@v1
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Upload coverage report as an artifact
-        uses: actions/upload-artifact@v3
-        with:
-            name: coverage-report
-            path: ./htmlcov
-    
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            files: ./coverage.xml
-            flags: unittests
-            name: codecov-coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+      # - name: Upload coverage report as an artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #       name: coverage-report
+      #       path: ./htmlcov
+    
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #       token: ${{ secrets.CODECOV_TOKEN }}
+      #       files: ./coverage.xml
+      #       flags: unittests
+      #       name: codecov-coverage
