@@ -2,4 +2,4 @@
 ![MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Test-Cases](https://github.com/systems-org/systems-0/actions/workflows/main.yml/badge.svg)
-[![codecov](https://codecov.io/gh/systems-org/systems-0/graph/badge.svg?token=YJ5J7QMWZD)](https://codecov.io/gh/systems-org/systems-0)
+[![codecov](https://codecov.io/gh/systems-org/systems-0/branch/main/graph/badge.svg?token=YJ5J7QMWZD)](https://codecov.io/gh/systems-org/systems-0)
