@@ -23,11 +23,17 @@ jobs:
             
       - name: Install dependencies
         run: pip install pytest pytest-cov
-  
-      - name: Run tests
-        run: pytest --cov
-
-      - name: Upload results to Codecov
+      
+      - name: Test with pytest
+        run: |
+          pytest --cov --junitxml=junit.xml
+      # Copy and paste the codecov/test-results-action here
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: 118dc41a-50b7-40cf-b989-623dcdbe28d5
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
         with:
           token: 118dc41a-50b7-40cf-b989-623dcdbe28d5
