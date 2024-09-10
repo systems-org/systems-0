@@ -43,7 +43,7 @@ jobs:
 
       - name: Test with pytest
         run: pytest --cov=myfile --cov-report=xml
-        working-directory:hw2
+        working-directory: hw2
         run: pytest --cov=myfile --cov-report=xml
         
       - name: Upload results to Codecov
