@@ -35,13 +35,11 @@ jobs:
 
       - name: Running test tools 2
         working-directory: hw2
-        run: |
-        bandit hw2_debugging.py
+        run:  bandit hw2_debugging.py
       
       - name: Running test tools 3
         working-directory: hw2
-        run: |
-        pylint hw2_debugging.py
+        run:  pylint hw2_debugging.py
 
       - name: Test with pytest
         run: pytest --cov=myfile --cov-report=xml
