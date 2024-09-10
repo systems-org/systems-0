@@ -25,7 +25,7 @@ jobs:
             
       - name: Install dependencies
         run: pip install pytest pytest-cov
-             pip install autopep8 
+             pip install autopep8
              pip install pylint 
              pip install bandit
       
