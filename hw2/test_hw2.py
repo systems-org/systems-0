@@ -16,6 +16,7 @@ def test_true2():
 
 def test_true3():
     arr = [1, 4, 5, 6]
+    expected=[1,4,5,6]
     sorted_arr = merge_sort(arr)
     print(f"Test 3 - Output: {sorted_arr}")
-    assert sorted_arr == [1, 4, 5, 6]
+    Assert.Equal(arr,expected)
