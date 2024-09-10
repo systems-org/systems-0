@@ -9,8 +9,7 @@ def merge_sort(arr):
     half = len(arr) // 2
 
     left_half = merge_sort(arr[:half])
-    right_half = merge_sort(arr[half:])
-    
+    right_half = merge_sort(arr[half:])   
     return recombine(left_half, right_half)
 
 def recombine(left_arr, right_arr):
@@ -31,15 +30,14 @@ def recombine(left_arr, right_arr):
     # Append remaining elements of left_arr (if any)
     if left_index < len(left_arr):
         merge_arr.extend(left_arr[left_index:])
-    
     # Append remaining elements of right_arr (if any)
     if right_index < len(right_arr):
         merge_arr.extend(right_arr[right_index:])
 
     return merge_arr
 
-# arr1 = rand.random_array([None] * 20)
-arr1 = [1, 5, 4, 8, 2]
-arr_out = merge_sort(arr1)
+arr1 = rand.random_array([None] * 20)
+arr2 = [1, 5, 4, 8, 2]
+arr_out = merge_sort(arr2)
 
 print(arr_out)
