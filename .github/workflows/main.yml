@@ -45,6 +45,8 @@ jobs:
 
       - name: Test with pytest
         run: pytest --cov=myfile --cov-report=xml
+      
+      - name: Testing in hw2
         working-directory: hw2
         run: pytest --cov=myfile --cov-report=xml
         
