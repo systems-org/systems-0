@@ -31,8 +31,7 @@ jobs:
       
       - name: Running the test tools
         working-directory: hw2
-        run: |
-        autopep8 hw2_debugging.py
+        run:  autopep8 hw2_debugging.py
 
       - name: Running test tools 2
         working-directory: hw2
