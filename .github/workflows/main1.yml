@@ -1,0 +1,56 @@
+name: systems.org app1
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensure full history is fetched
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+            
+      - name: Install dependencies
+        pip install autopep8 pylint bandit
+        working-directory: hw2
+        run: pip install pytest pytest-cov
+      
+      -name: Running the test tools
+       working-directory: hw2
+       run: |
+       autopep8 hw2_debugging.py
+
+       -name: Running test tools 2
+       working-directory: hw2
+       run: |
+       bandit hw2_debugging.py
+      
+      -name: Running test tools 3
+       working-directory: hw2
+       run: |
+       pylint hw2_debugging.py
+      
+
+      - name: Test with pytest
+        working-directory:hw2
+        run: pytest --cov=myfile --cov-report=xml
+        
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: 118dc41a-50b7-40cf-b989-623dcdbe28d5
+          files: ./coverage.xml
+          fail_ci_if_error: true
