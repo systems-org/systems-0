@@ -8,7 +8,7 @@ def merge_sort(arr):
 
     half = len(arr) // 2
     left_half = merge_sort(arr[:half])
-    right_half = merge_sort(arr[half:])   
+    right_half = merge_sort(arr[half:])
     return recombine(left_half, right_half)
 
 def recombine(left_arr, right_arr):
