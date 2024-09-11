@@ -6,4 +6,4 @@ def test_true():
     assert add_numbers(1, 2) == 3
 
 def test_false():
-    assert add_numbers(1, 1) == 2 # This should fail
+    assert add_numbers(1, 1) == 12 # This should fail
