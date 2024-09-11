@@ -1,35 +1,27 @@
 name: systems.org app0
-
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-
-permissions:
-  contents: write
-
+    branches: [ "main" ]
+  
 jobs:
-  build:
+  run_pytest:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Ensure full history is fetched
+    - uses: actions/checkout@v4
+    - name: Install and run tests with pytest
+      run: |
+        pip install pytest pytest-cov
+        pytest --cov=tests --cov-report=xml --cov-report=html
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-            
-      - name: Install dependencies
-        run: |
-             pip install pytest pytest-cov
-                   
-      - name: Upload results to Codecov
-        uses: codecov/codecov-action@v4
+    - name: Upload coverage report as an artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: ./htmlcov
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
         with:
           token: 118dc41a-50b7-40cf-b989-623dcdbe28d5
           files: ./coverage.xml
-          fail_ci_if_error: true
+          fail_ci_if_error: true         
