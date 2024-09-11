@@ -1,5 +1,4 @@
 """ Module illustrating algorithm of Merge Sort"""
-import rand
 
 def merge_sort(arr):
     """Dividing the array"""
@@ -34,7 +33,6 @@ def recombine(left_arr, right_arr):
         merge_arr.extend(right_arr[right_index:])
 
     return merge_arr
-arr1 = rand.random_array([None] * 20)
 arr2 = [1, 5, 4, 8, 2]
 arr_out = merge_sort(arr2)
 
