@@ -3,3 +3,4 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Test-Cases](https://github.com/systems-org/systems-0/actions/workflows/main.yml/badge.svg)
 [![codecov](https://codecov.io/gh/systems-org/systems-0/graph/badge.svg?token=YJ5J7QMWZD)](https://codecov.io/gh/systems-org/systems-0)
+[![systems.org app0](https://github.com/systems-org/systems-0/actions/workflows/main.yml/badge.svg)](https://github.com/systems-org/systems-0/actions/workflows/main.yml)
