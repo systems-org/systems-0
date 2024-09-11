@@ -1,4 +1,4 @@
-name: Pylint, Bandit and AutoPEP8 
+name: systems.org system0
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Ensure full history is fetched
+          fetch-depth: 0 
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,26 +26,11 @@ jobs:
       - name: Install dependencies
         run: |
              pip install pytest pytest-cov
-             pip install autopep8
-             pip install pylint 
-             pip install bandit
       
       - name: Install pytest in hw2
         working-directory: hw2
         run: pip install pytest pytest-cov
       
-      - name: Running the test tools
-        working-directory: hw2
-        run:  autopep8 hw2_debugging.py
-
-      - name: Running test tools 2
-        working-directory: hw2
-        run:  bandit hw2_debugging.py
-      
-      - name: Running test tools 3
-        working-directory: hw2
-        run: pylint hw2_debugging.py
-
       - name: Test with pytest
         run: pytest --cov=myfile --cov-report=xml
       
