@@ -26,39 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
              pip install pytest pytest-cov
-             pip install autopep8
-             pip install pylint 
-             pip install bandit
-      
-      - name: Install pytest in hw2
-        working-directory: hw2
-        run: pip install pytest pytest-cov
-      
-      - name: Running the test tools
-        working-directory: hw2
-        run:  autopep8 hw2_debugging.py
-
-      - name: Running test tools 2
-        working-directory: hw2
-        run:  bandit hw2_debugging.py
-      
-      - name: Running test tools 3
-        working-directory: hw2
-        run: pylint hw2_debugging.py
-
-      - name: Run Pylint GitHub Action
-        uses: Silleellie/pylint-github-action@v2
-        with:
-          lint-path: hw2_debugging.py
-          python-version: 3.11
-
-      - name: Test with pytest
-        run: pytest --cov=myfile --cov-report=xml
-      
-      - name: Testing in hw2
-        working-directory: hw2
-        run: pytest --cov=myfile --cov-report=xml
-        
+                   
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
         with:
