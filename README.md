@@ -6,4 +6,4 @@
 ![Test-Cases](https://github.com/systems-org/systems-0/actions/workflows/main.yml/badge.svg)
 ![Pylint](https://img.shields.io/badge/pylint-10/10-brightgreen)
 ![PEP8](https://img.shields.io/badge/PEP8-autopep8--compliant-brightgreen)
-![Bandit](https://img.shields.io/badge/bandit-security--check-passing-brightgreen)
+<!-- ![Bandit](https://img.shields.io/badge/bandit-security--check-passing-brightgreen) -->
