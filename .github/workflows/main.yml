@@ -44,8 +44,10 @@ jobs:
       
       - name: Running test tools 3
         working-directory: hw2
-        run:  pylint hw2_debugging.py
-        - uses: Silleellie/pylint-github-action@v2
+        run: pylint hw2_debugging.py
+
+      - name: Run Pylint GitHub Action
+        uses: Silleellie/pylint-github-action@v2
         with:
           lint-path: hw2_debugging.py
           python-version: 3.11
